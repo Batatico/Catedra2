@@ -4,13 +4,16 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "node --trace-warnings --watch --env-file=env/ src/app.js"
+    "dev": "node --trace-warnings --watch --env-file=env/.env src/app.js",
+    "db:migrate:up": "npx sequelize-cli db:migrate",
+    "db:migrate:down": "npx sequelize-cli db:migrate:undo"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "description": "",
   "dependencies": {
+    "bcryptjs": "^3.0.2",
     "cors": "^2.8.5",
     "express": "^5.1.0",
     "express-validator": "^7.2.1",
